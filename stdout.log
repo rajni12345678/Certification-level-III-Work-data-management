@@ -1,0 +1,16 @@
+==============================================================================
+My-3-Robo                                                                     
+==============================================================================
+My-3-Robo.Consumer :: Inhuman Insurance, Inc. Artificial Intelligence Syste...
+==============================================================================
+Consume traffic data work items                                       | FAIL |
+Dictionary '${payload}' has no key 'traffic_data'.
+------------------------------------------------------------------------------
+My-3-Robo.Consumer :: Inhuman Insurance, Inc. Artificial Intellige... | FAIL |
+1 task, 0 passed, 1 failed
+==============================================================================
+My-3-Robo                                                             | FAIL |
+1 task, 0 passed, 1 failed
+==============================================================================
+Output:  c:\Users\Shree\Desktop\my-3-robo\output\output.xml
+Log:     c:\Users\Shree\Desktop\my-3-robo\output\log.html

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.5 on win32)" generated="20220313 18:25:51.772" rpa="true" schemaversion="2">
+<suite id="s1" name="My-3-Robo" source="c:\Users\Shree\Desktop\my-3-robo">
+<suite id="s1-s1" name="Consumer" source="c:\Users\Shree\Desktop\my-3-robo\consumer.robot">
+<test id="s1-s1-t1" name="Consume traffic data work items">
+<kw name="For Each Input Work Item" library="RPA.Robocorp.WorkItems">
+<arg>Process traffic data</arg>
+<doc>Run a keyword or function for each work item in the input queue.</doc>
+<kw name="Process traffic data">
+<kw name="Get Work Item Payload" library="RPA.Robocorp.WorkItems">
+<var>${payload}</var>
+<doc>Get the full JSON payload for a work item.</doc>
+<msg timestamp="20220313 18:25:54.035" level="INFO">${payload} = {}</msg>
+<status status="PASS" starttime="20220313 18:25:54.035" endtime="20220313 18:25:54.036"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${traffic_data}</var>
+<arg>${payload}[${WORK_ITEM_NAME}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220313 18:25:54.045" level="FAIL">Dictionary '${payload}' has no key 'traffic_data'.</msg>
+<status status="FAIL" starttime="20220313 18:25:54.036" endtime="20220313 18:25:54.045"/>
+</kw>
+<kw name="Validate traffic data">
+<var>${valid}</var>
+<arg>${traffic_data}</arg>
+<status status="NOT RUN" starttime="20220313 18:25:54.046" endtime="20220313 18:25:54.046"/>
+</kw>
+<if>
+<branch type="IF" condition="${valid}">
+<kw name="Post traffic data to sales system">
+<arg>${traffic_data}</arg>
+<status status="NOT RUN" starttime="20220313 18:25:54.047" endtime="20220313 18:25:54.048"/>
+</kw>
+<status status="NOT RUN" starttime="20220313 18:25:54.046" endtime="20220313 18:25:54.048"/>
+</branch>
+<branch type="ELSE">
+<kw name="Handle invalid traffic data">
+<arg>${traffic_data}</arg>
+<status status="NOT RUN" starttime="20220313 18:25:54.049" endtime="20220313 18:25:54.051"/>
+</kw>
+<status status="NOT RUN" starttime="20220313 18:25:54.049" endtime="20220313 18:25:54.051"/>
+</branch>
+<status status="NOT RUN" starttime="20220313 18:25:54.046" endtime="20220313 18:25:54.051"/>
+</if>
+<status status="FAIL" starttime="20220313 18:25:54.034" endtime="20220313 18:25:54.053"/>
+</kw>
+<status status="FAIL" starttime="20220313 18:25:54.032" endtime="20220313 18:25:54.054"/>
+</kw>
+<status status="FAIL" starttime="20220313 18:25:54.031" endtime="20220313 18:25:54.055">Dictionary '${payload}' has no key 'traffic_data'.</status>
+</test>
+<doc>Inhuman Insurance, Inc. Artificial Intelligence System robot.
+Consumes traffic data work items.</doc>
+<status status="FAIL" starttime="20220313 18:25:51.870" endtime="20220313 18:25:54.061"/>
+</suite>
+<status status="FAIL" starttime="20220313 18:25:51.776" endtime="20220313 18:25:54.069"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="My-3-Robo">My-3-Robo</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Consumer">My-3-Robo.Consumer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220313 18:25:54.030" level="WARN">No input work items file found: None</msg>
+</errors>
+</robot>
